@@ -36,6 +36,7 @@ query LoadAllPostsExcerpts {
 					<a href={`/blog/${post.slug}`}>{post.title}</a>
 				</h2>
 				<Fragment set:html={post.excerpt} />
+				<a href={`/blog/${post.slug}`}>read post &rarr;</a>
 			</article>
 		);
 	})}
