@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { wpquery } from "../data/wordpress";
+import heroImage from "../assets/wp-astro-image.jpg";
+
 
 const data = await wpquery({
 	query:`
@@ -28,6 +30,11 @@ query LoadAllPostsExcerpts {
 }
 -->
 <Layout title="Home">
+	<img 
+		src={heroImage.src} 
+		alt="Blog Hero Image" 
+		style="width: 100%; max-height: 400px; object-fit: cover; margin-bottom: 1rem;" 
+	/>
 	<h1>Home</h1>
 	{data.posts.nodes.map((post:any) => {
 		return (
