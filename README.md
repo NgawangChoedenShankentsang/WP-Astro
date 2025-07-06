@@ -82,4 +82,4 @@ Make sure your WordPress instance includes the following plugins:
 
 ## 🔗 Live Demo
 
-👉 [View Demo](https://your-demo-url.com)
+👉 [View Demo](https://chic-chimera-d3dcff.netlify.app/)
