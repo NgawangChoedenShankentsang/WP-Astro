@@ -1,7 +1,28 @@
 ---
 import Layout from "../../layouts/Layout.astro"; 
 ---
-
+<!-- query LoadAllPosts {
+  posts {
+    nodes {
+      title
+      slug
+      featuredImage {
+        node {
+          mediaItemUrl
+          srcSet
+          sizes
+          altText
+        }
+      }
+      content(format: RENDERED)
+      author {
+        node {
+          name
+        }
+      }
+    }
+  }
+} -->
 <Layout title="blog">
     <img    
         src="https://via.placeholder.com/150"
