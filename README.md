@@ -1,6 +1,16 @@
-# Astro + WordPress Headless CMS
+<p align="center">
+  <a href="https://www.learnwithjason.dev">
+    <img src="https://wp-astro.netlify.app/_astro/wp-astro-image.D_KphhoA.jpg" alt="Learn With Jason" width="full" />
+  </a>
+</p>
 
-This project is a minimal Headless CMS setup built using [Astro](https://astro.build/) for the frontend and [WordPress](https://wordpress.org/) as a headless backend. WordPress delivers content via the WPGraphQL API, and images are served through Cloudinary to avoid direct WordPress dependency for media delivery.
+<h1 align="center">Astro + WordPress Headless CMS</h1>
+
+<p align="center">
+  This project is a minimal Headless CMS setup built using <a href="https://astro.build/">Astro</a> for the frontend and <a href="https://wordpress.org/">WordPress</a> as a headless backend.<br>
+  WordPress delivers content via the WPGraphQL API, and images are served through Cloudinary to avoid direct WordPress dependency for media delivery.
+</p>
+
 
 &nbsp;
 
@@ -76,4 +86,4 @@ Make sure your WordPress instance includes the following plugins:
 
 ## 🔗 Live Demo
 
-👉 [View Demo](https://chic-chimera-d3dcff.netlify.app/)
+👉 [View Demo](https://wp-astro.netlify.app/)
