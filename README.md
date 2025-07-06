@@ -2,6 +2,8 @@
 
 This project is a minimal Headless CMS setup built using [Astro](https://astro.build/) for the frontend and [WordPress](https://wordpress.org/) as a headless backend. WordPress delivers content via the WPGraphQL API, and images are served through Cloudinary to avoid direct WordPress dependency for media delivery.
 
+&nbsp;
+
 ## ✨ Tech Stack
 
 - **Frontend**: Astro
@@ -10,17 +12,7 @@ This project is a minimal Headless CMS setup built using [Astro](https://astro.b
 - **Image Handling**: Cloudinary plugin
 - **Language**: TypeScript (for API integration)
 
-
-
-## 🚀 Features
-
-- Blog posts fetched dynamically from WordPress via GraphQL.
-- Clean separation of content and presentation.
-- Image delivery via Cloudinary (faster, CDN-optimized).
-- SEO-friendly routing with dynamic blog pages.
-- Astro’s island architecture for performance.
-
-
+&nbsp;
 
 ## 📁 Project Structure
 
@@ -39,8 +31,7 @@ This project is a minimal Headless CMS setup built using [Astro](https://astro.b
 │ └── Layout.astro // Shared layout for pages
 ```
 
-
-
+&nbsp;
 
 ## 🔧 WordPress Setup
 
@@ -51,6 +42,7 @@ Make sure your WordPress instance includes the following plugins:
 
 **Cloudinary** handles media delivery, so blog images are not directly served from WordPress, improving performance and security.
 
+&nbsp;
 
 ## 📦 Installation
 
@@ -69,7 +61,7 @@ Make sure your WordPress instance includes the following plugins:
 ```bash
    npm run dev
 ```
-
+&nbsp;
 
 ## 🧠 How it works
 - pages/index.astro: Fetches all posts with title, slug, and excerpt.
@@ -79,6 +71,8 @@ Make sure your WordPress instance includes the following plugins:
 - wpquery(): Sends GraphQL queries to the WP backend and returns the parsed result.
 
 - Cloudinary images are rendered with srcSet, sizes, and altText for responsive design and accessibility.
+
+&nbsp;
 
 ## 🔗 Live Demo
 
