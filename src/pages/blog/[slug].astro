@@ -1,7 +1,47 @@
 ---
 import Layout from "../../layouts/Layout.astro"; 
+import { wpquery } from "../../data/wordpress";
+
+export async function getStaticPaths() {
+    const data = await wpquery({
+      query:`
+        query LoadAllPosts {
+          posts {
+            nodes {
+              title
+              slug
+              featuredImage {
+                node {
+                  mediaItemUrl
+                  srcSet
+                  sizes
+                  altText
+                }
+              }
+              content(format: RENDERED)
+              author {
+                node {
+                  name
+                }
+              }
+            }
+          }
+        } 
+      `,
+    });
+
+    return data.posts.nodes.map((post: any) => {
+      return {
+        params: { slug: post.slug },
+        props: { post },
+      };
+    });
+}
+
+const { post } = Astro.props;
 ---
-<!-- query LoadAllPosts {
+<!-- 
+query LoadAllPosts {
   posts {
     nodes {
       title
@@ -22,20 +62,20 @@ import Layout from "../../layouts/Layout.astro";
       }
     }
   }
-} -->
+} 
+-->
 <Layout title="blog">
     <img    
-        src="https://via.placeholder.com/150"
-        srcset="https://via.placeholder.com/150 1x, https://via.placeholder.com/300 2x
-        https://via.placeholder.com/450 3x, https://via.placeholder.com/600 4x"
-        sizes="400"
-        alt="placeholder" 
+        src={post.featuredImage.node.mediaItemUrl}
+        srcset={post.featuredImage.node.srcSet}
+        sizes={post.featuredImage.node.sizes}
+        alt={post.featuredImage.node.altText}
     />
 
-    <h1>Blog</h1>
+    <h1>{post.title}</h1>
 
-    <p class="byline">Ngawang</p>
-    <p>Some more content</p>
+    <p class="byline">Author: {post.author.node.name}</p>
+    <Fragment set:html={post.content} />
 
     <p>
         <a href="/">back to home</a>
